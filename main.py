@@ -17,8 +17,8 @@ def main(Link: str = "", DevMod: bool = False):
     # dataArray = np.array([["1", "4", "2"], ["0", "2", "4"], ["1", "4", "8"]])
     # print(data)
     # print(dataArray)
-    # DBSCAN_cluster = DBSCAN(eps=10, min_samples=5).fit(dataArray)
-    # print(DBSCAN_cluster)
+    DBSCAN_cluster = dbscan(Data, eps=10, min_samples=5)
+    print(DBSCAN_cluster)
     # print(DBSCAN_cluster.labels_)
     # label, core_sample_mask = DBSCAN(eps=0.3, min_samples=10).fit(data)
 
