@@ -6,7 +6,6 @@ def main(Link: str = "", DevMod: bool = False, DebugMod: bool = False):
     if not DevMod:
         Link: str = haveLinkFile("Donnez le lien des données : ")
     Data = superReadLinesTable(Link)
-    print(Data)
 
     if DebugMod:
         eps = 0.5
@@ -19,7 +18,8 @@ def main(Link: str = "", DevMod: bool = False, DebugMod: bool = False):
             minPts = haveFloatant("minPts = ")
 
     DBSCAN_cluster = dbscan(Data, eps, minPts)
-    print(DBSCAN_cluster)
+
+    print(Data, "\n\n", DBSCAN_cluster, '\n')
 
     if len(Data) == len(DBSCAN_cluster):
         table_cluster = Table_cluster()
@@ -29,4 +29,4 @@ def main(Link: str = "", DevMod: bool = False, DebugMod: bool = False):
 
 
 if __name__ == '__main__':
-    main(Link="./NoSql.txt", DevMod=True, DebugMod=True)
+    main(Link="./Document/NoSql.txt", DevMod=True, DebugMod=True)

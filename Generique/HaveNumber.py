@@ -18,5 +18,10 @@ def haveInteger(message: str = "Nombre(int) = ") -> int:
 
 def haveFloatant(message: str = "Nombre(float) = ") -> float:
     """Permet d'obtenir un nombre decimal."""
-    val = haveNum(message)
-    return float(val)
+    while 1:
+        try:
+            val: float = float(input(message))
+        except ValueError:
+            continue
+        else:
+            return val
