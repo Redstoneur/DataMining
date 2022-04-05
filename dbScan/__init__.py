@@ -1,4 +1,4 @@
-from sklearn.cluster import DBSCAN
+#from DbScan import *
+from dbScan.Numberisation import *
+from dbScan.generique import *
 from dbScan.readData import *
-
-#DBSCAN_cluster = DBSCAN(eps=10, min_samples=5).fit(X)

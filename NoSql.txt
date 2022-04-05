@@ -134,4 +134,4 @@ quantityInStock quantityInStock productVendor
 productLine productDescription productVendor productScale quantityInStock productScale buyPrice productLine 
 MSRP productVendor buyPrice productLine productDescription productScale productScale 
 productScale buyPrice 
-productVendor productScale productVendor productLine 
+productVendor productScale productVendor productLine
