@@ -24,6 +24,6 @@ def main(Link: str = "", DevMod: bool = False):
 
 
 if __name__ == '__main__':
-    link = "C:/Alipio/DataMinig/NoSql.txt"
+    link = "C:/Alipio/DataMining/NoSql.txt"
     devMod = yn("Mode Dévelopeur ? ")
     main(link, devMod)
