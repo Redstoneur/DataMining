@@ -1,4 +1,4 @@
-from dbScan.generique import *
+from Generique import *
 
 
 def bd_number(li: list) -> list:

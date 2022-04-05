@@ -1,3 +1,7 @@
+from Generique.HaveNumber import *
+from Generique.Numberisation import *
+
+
 def yn(intitule: str) -> bool:
     """Question oui/non"""
     r = ""
