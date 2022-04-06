@@ -6,6 +6,8 @@ def main(Link: str = "./Document/NoSql.txt", eps: float = 0.5, minPts: int = 4, 
          DebugMod: bool = False):
     """
     :param Link: Le lien par défaut
+    :param minPts:
+    :param eps:
     :param DevMod: Si en True permet d'utiliser Link sinon False et demande un lien
     :param DebugMod: Si en True permet d'utiliser eps et minPts par défaut sinon False et demande un lien
     :return:
