@@ -13,12 +13,11 @@ def main(Link: str = "./Document/NoSql.txt", eps: float = 0.5, minPts: int = 4, 
     :return:
     """
 
-    if not DevMod:
+    if not DevMod:  # récupérer un lien vers des données
         Link: str = haveLinkFile("Donnez le lien des données : ")
         print()
-    Data = ReadLinesData(Link)
 
-    if not DebugMod:
+    if not DebugMod:  # les valeurs de "eps" et "minPts"
         eps: float = -1
         minPts: int = -1
         while not (0 <= eps <= 1):
@@ -27,11 +26,15 @@ def main(Link: str = "./Document/NoSql.txt", eps: float = 0.5, minPts: int = 4, 
             minPts: int = haveInteger("minPts = ")
         print()
 
-    DBSCAN_cluster = dbscan(Data, eps, minPts)
+    Data = ReadLinesData(Link) # générer les données
+    DBSCAN_cluster = dbscan(Data, eps, minPts) # créer les Clusters
 
-    print(Data, "\n\n", DBSCAN_cluster, '\n')
+    print("Les données récupérer : \n" +
+          "     --> " + str(Data) + "\n\n" +
+          "Les différents Clusters générés : \n" +
+          "     --> " + str(DBSCAN_cluster) + "\n")
 
-    if len(Data) == len(DBSCAN_cluster):
+    if len(Data) == len(DBSCAN_cluster): # création et affichage des Clusters
         table_cluster = Table_cluster()
         for i in range(len(Data)):
             table_cluster.__add__(DBSCAN_cluster[i], Data[i])
