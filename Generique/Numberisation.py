@@ -1,4 +1,4 @@
-from Generique import create_Dictionnaire
+from Generique.generique import create_Dictionnaire
 
 
 def bd_number(li: list) -> list:
