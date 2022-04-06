@@ -26,15 +26,15 @@ def main(Link: str = "./Document/NoSql.txt", eps: float = 0.5, minPts: int = 4, 
             minPts: int = haveInteger("minPts = ")
         print()
 
-    Data = ReadLinesData(Link) # générer les données
-    DBSCAN_cluster = dbscan(Data, eps, minPts) # créer les Clusters
+    Data = ReadLinesData(Link)  # générer les données
+    DBSCAN_cluster = dbscan(Data, eps, minPts)  # créer les Clusters
 
     print("Les données récupérer : \n" +
           "     --> " + str(Data) + "\n\n" +
           "Les différents Clusters générés : \n" +
           "     --> " + str(DBSCAN_cluster) + "\n")
 
-    if len(Data) == len(DBSCAN_cluster): # création et affichage des Clusters
+    if len(Data) == len(DBSCAN_cluster):  # création et affichage des Clusters
         table_cluster = Table_cluster()
         for i in range(len(Data)):
             table_cluster.__add__(DBSCAN_cluster[i], Data[i])
