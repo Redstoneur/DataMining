@@ -2,20 +2,28 @@ from Generique import *
 from WorkSpace import *
 
 
-def main(Link: str = "", DevMod: bool = False, DebugMod: bool = False):
+def main(Link: str = "./Document/NoSql.txt", eps: float = 0.5, minPts: int = 4, DevMod: bool = False,
+         DebugMod: bool = False):
+    """
+    :param Link: Le lien par défaut
+    :param DevMod: Si en True permet d'utiliser Link sinon False et demande un lien
+    :param DebugMod: Si en True permet d'utiliser eps et minPts par défaut sinon False et demande un lien
+    :return:
+    """
+
     if not DevMod:
         Link: str = haveLinkFile("Donnez le lien des données : ")
-    Data = superReadLinesTable(Link)
+        print()
+    Data = ReadLinesData(Link)
 
-    if DebugMod:
-        eps = 0.5
-        minPts = 4
-    else:
-        eps, minPts = -1, -1
+    if not DebugMod:
+        eps: float = -1
+        minPts: int = -1
         while not (0 <= eps <= 1):
-            eps = haveFloatant("eps = ")
+            eps: float = haveFloatant("eps = ")
         while not (0 <= minPts <= 10):
-            minPts = haveFloatant("minPts = ")
+            minPts: int = haveInteger("minPts = ")
+        print()
 
     DBSCAN_cluster = dbscan(Data, eps, minPts)
 
@@ -29,4 +37,4 @@ def main(Link: str = "", DevMod: bool = False, DebugMod: bool = False):
 
 
 if __name__ == '__main__':
-    main(Link="./Document/NoSql.txt", DevMod=True, DebugMod=True)
+    main(Link="./Document/NoSql.txt", eps=0.5, minPts=4, DevMod=False, DebugMod=False)

@@ -1,7 +1,13 @@
-from Generique import enleve_Duplicatat
+from Generique import enleve_Duplicata
 
 
 def haveLinkFile(message: str = "Donnez le lien : ", link: str = "") -> str:
+    """
+    Permet de demander à l'utilisateur un lien vers des données.
+    :param message: intitulé de question
+    :param link: permet de donner un lien par défaut (facultatif)
+    :return:
+    """
     while 1:
         if link == "":
             link: str = input(message)
@@ -15,31 +21,13 @@ def haveLinkFile(message: str = "Donnez le lien : ", link: str = "") -> str:
             return link
 
 
-def read_txt(link: str) -> [str, IOError]:
-    try:
-        file = open(link, "r")
-    except IOError:
-        return IOError
-    else:
-        txt = file.read()
-        file.close()
-        return txt
-
-
-def readLinesTable(link: str) -> [list, IOError]:
-    try:
-        file = open(link, "r")
-    except IOError:
-        return IOError
-    else:
-        tablinestab = []
-        for line in file.readlines():
-            tablinestab += [line.replace(" \n", "").split(" ")]
-        file.close()
-        return tablinestab
-
-
-def superReadLinesTable(link: str) -> [list, IOError]:
+def ReadLinesData(link: str) -> [list, IOError]:
+    """
+    Permet de lire les données.
+    Nécessite un fichier txt
+    :param link: lien vers le fichier
+    :return:
+    """
     try:
         file = open(link, "r")
     except IOError:
@@ -51,6 +39,6 @@ def superReadLinesTable(link: str) -> [list, IOError]:
             tab = lines[i].split(" ")
             if i != len(lines) - 1:
                 tab.pop()
-            tablinestab += [enleve_Duplicatat(tab)]
+            tablinestab += [enleve_Duplicata(tab)]
         file.close()
         return tablinestab

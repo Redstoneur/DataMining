@@ -2,6 +2,10 @@ from Generique import *
 
 
 def bd_number(li: list) -> list:
+    """
+    :param li: list à numériser.
+    :return:
+    """
     newLi = []
     dico = create_Dictionnaire(li)
     for i in range(len(li)):
@@ -13,6 +17,11 @@ def bd_number(li: list) -> list:
 
 
 def bd_str(li: list, dico: list) -> list:
+    """
+    :param li: list à dénumériser.
+    :param dico: Dictionnaire
+    :return:
+    """
     newLi = []
     for i in range(len(li)):
         subTab = []
