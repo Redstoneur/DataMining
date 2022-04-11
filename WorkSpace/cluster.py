@@ -4,8 +4,9 @@ from Generique import create_Dictionnaire, enleve_Duplicata
 class Cluster:
     ID: int = None  # ID du Cluster
     Titre: str = ""  # Titre du Cluster
-    Properties: list = []  # Liste des propriétés du Cluster
-    Generic_Property = []  # Liste Variable Commune
+    Properties: list[list] = []  # Liste des propriétés du Cluster
+    Generic_Property: list = []  # Liste Variable Commune
+    Lenght_Properties: int = 0
 
     def __init__(self, numID: int, titre: str = "") -> None:
         """
@@ -26,6 +27,7 @@ class Cluster:
         """
         self.Properties += [property]
         self.update_Generic_Property()
+        self.Lenght_Properties += 1
 
     def update_Generic_Property(self) -> None:
         """
@@ -54,7 +56,8 @@ class Cluster:
         :return:
         """
         return str(self.ID) + ") " + str(self.Titre) + " " + str(self.Generic_Property) + " : \n" + \
-               "    ==> List Properties : " + str(self.Properties) + "\n"
+               "    ==> Nombre de propriétés :" + str(self.Lenght_Properties) + "\n" + \
+               "    ==> Liste des propriétés :" + str(self.Properties) + "\n"
 
     def affichage(self) -> None:
         """
