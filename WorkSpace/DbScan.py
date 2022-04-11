@@ -1,6 +1,6 @@
 def dbscan(data, eps, minPts):
     """
-    Implements DBSCAN clustering algorithm.
+    Implémentation de l'algorithme de clustering DBSCAN.
     :param data:
     :param eps:
     :param minPts:
@@ -29,7 +29,7 @@ def dbscan(data, eps, minPts):
 
 def epsilonVoisinnage(data, point_id, eps):
     """
-    Finds all points within eps distance of point_id
+    Trouve tous les points voisins de point_id selon la distance eps
     :param data:
     :param point_id:
     :param eps:
@@ -46,7 +46,7 @@ def epsilonVoisinnage(data, point_id, eps):
 
 def distance_jaccard(point1, point2):
     """
-    Calculates Jaccard distance between two points
+    Calcule la distance entre deux points selon la formule de jaccard.
     :param point1:
     :param point2:
     :return:
@@ -56,7 +56,7 @@ def distance_jaccard(point1, point2):
 
 def etendreCluster(data, labels, point_d, neighbors, cluster_id, eps, minPts):
     """
-    Expands cluster by finding all neighbors of each neighbor and applying DBSCAN
+    Etend le cluster en trouvant tous les voisins de chaque voisins en appliquant DBSCAN
     :param data:
     :param labels:
     :param point_d:
